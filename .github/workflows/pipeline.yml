@@ -15,7 +15,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3   #download the code 
       - name: setup python  
-        uses: action/setup-python@v4 #install the python
+        uses: actions/setup-python@v4 #install the python
         with:
           python-version: $ {{matrix.python-version}}
       - name: Install dependencies
@@ -26,5 +26,5 @@ jobs:
         run: |
           python manage.py ruserver & 
           sleep 5
-          curl http://127.0.0.8000 || echo "server failed"
+          curl http://127.0.0.1.8000 || echo "server failed"
 
